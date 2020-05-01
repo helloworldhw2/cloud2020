@@ -1,0 +1,14 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-order
+  cloud:
+    consul:
+      host: 192.168.140.128
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        ip-address: 192.168.18.3 # 访问服务时使用的 ip地址 （还必须设置preferIpAddress才能使用）
+        prefer-ip-address: true
